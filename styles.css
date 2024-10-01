@@ -23,11 +23,15 @@
 
 html {
   overflow: hidden;
+  height: 100%;
+  width: 100%;
 }
 
 body {
   background-color: #b0e3ff79;
   font-family: "Calibri";
+  height: 100%;
+  width: 100%;
 }
 
 main {
@@ -178,6 +182,8 @@ main {
   border-color: var(--border-color-active);
   outline: none;
 }
+
+
 
 /* *** Adaptive  */
 
