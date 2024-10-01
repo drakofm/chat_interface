@@ -34,8 +34,9 @@ main {
   display: flex;
   flex-direction: column;
   gap: 5px;
-  height: 100dvh;
-  width: 100dvw;
+  height: 100vh;
+  max-height: -webkit-fill-available;
+  width: 100vw;
 }
 
 #header,
