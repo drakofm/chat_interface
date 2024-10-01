@@ -1,4 +1,4 @@
-/* NOTE: Pilot version! CSS not optimized! */
+/* TODO: check cross-browser compatibility */
 
 /* *** Сброс стилей */
 *,
@@ -8,21 +8,20 @@
   padding: 0;
   box-sizing: border-box;
 }
-
-html {
-  overflow: hidden;
-}
-
 /* Сброс стилей $$$ */
 
 :root {
-  --color-1: #3700ff3a;
-  --color-2: #a200ff3a;
-  --color-3: #f200ff3a;
+  --main-color-1: #3700ff3a;
+  --main-color-2: #a200ff3a;
+  --main-color-3: #f200ff3a;
   --bg-color: #d4e4fe;
   --bg-color-light: #e6effc;
   --border-color: #aca6f9;
   --border-color-active: #837bf6;
+}
+
+html {
+  overflow: hidden;
 }
 
 body {
@@ -31,11 +30,20 @@ body {
 }
 
 main {
-  height: 100vh;
-  width: 100vw;
   display: flex;
   flex-direction: column;
   gap: 5px;
+  height: 100vh;
+  width: 100vw;
+}
+
+#header,
+#users-list,
+#chat,
+#footer {
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  background-color: var(--bg-color);
 }
 
 #header {
@@ -44,27 +52,17 @@ main {
   gap: 30px;
   min-height: 50px;
   padding: 10px min(5%, 25px);
-  background-color: var(--bg-color);
-  border: 1px solid var(--border-color);
-  border-radius: 20px;
-}
-
-.controls:hover {
-  cursor: pointer;
 }
 
 #users-list-and-chat {
-  max-height: calc(100vh - 162.5px);
   display: flex;
   gap: 5px;
+  max-height: calc(100vh - 160px); /* второй операнд подбирается в соответствии с захардкоденными высотами header (50px), footer (100px) и main->gap (5px * 2 гэпа между тремя элементами флексбокса)  */
 }
 
 #users-list {
-  padding: 10px;
   min-width: 200px;
-  background-color: var(--bg-color);
-  border: 1px solid var(--border-color);
-  border-radius: 20px;
+  padding: 10px;
   overflow-y: auto;
   scrollbar-width: none;
 }
@@ -72,17 +70,12 @@ main {
 .user-plate {
   display: flex;
   align-items: center;
-  list-style-type: none;
   margin-bottom: 5px;
   padding: 3px 5px;
-  background-color: var(--color-1);
+  background-color: var(--main-color-1);
   border-radius: 5px;
+  list-style-type: none;
   transition: all 0.2s;
-}
-
-.user-plate:hover {
-  cursor: pointer;
-  background-color: var(--color-2);
 }
 
 .user-icon-mini {
@@ -92,13 +85,9 @@ main {
 }
 
 #chat {
-  flex-grow: 1;
   display: flex;
   flex-direction: column-reverse;
   padding: 10px;
-  background-color: var(--bg-color);
-  border: 1px solid var(--border-color);
-  border-radius: 20px;
   overflow-y: auto;
   scrollbar-width: none;
 }
@@ -119,27 +108,24 @@ main {
 }
 
 .message-to, .message-from {
-  border-radius: 10px;
-  padding: 5px 10px;
+  max-width: 80%;
   margin: 5px;
-  max-width: 80%; 
+  padding: 5px 10px;
+  border-radius: 10px;
 }
 
 .message-to {
-  background-color: var(--color-1);
+  background-color: var(--main-color-1);
 }
 
 .message-from {
-  background-color: var(--color-3);
+  background-color: var(--main-color-3);
   align-self: flex-end;
 }
 
 #footer {
   min-height: 100px;
   padding: 10px;
-  background-color: var(--bg-color);
-  border: 1px solid var(--border-color);
-  border-radius: 20px;
 }
 
 #footer__message-form {
@@ -153,11 +139,6 @@ main {
   position: absolute;
 }
 
-#footer__message-icon-smile:hover,
-#footer__message-icon-attach:hover {
-  cursor: pointer;
-}
-
 #footer__message-icon-smile {
   top: 10px;
   right: 10px;
@@ -169,17 +150,27 @@ main {
 }
 
 #footer__message-box {
-  width: inherit;
-  height: inherit;
-  resize: none;
-  border: 1px solid var(--border-color);
-  outline-color: var(--border-color);
-  background-color: var(--bg-color-light);
-  border-radius: 10px;
+  width: 100%;
+  height: 100%;
   padding: 5px 40px 5px 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  background-color: var(--bg-color-light);
+  outline-color: var(--border-color);
+  font: 1rem "Calibri";
+  resize: none;
   scrollbar-width: none;
-  font-family: "Calibri";
-  font-size: 1rem;
+}
+
+.controls:hover,
+.user-plate:hover,
+#footer__message-icon-smile:hover,
+#footer__message-icon-attach:hover {
+  cursor: pointer;
+}
+
+.user-plate:hover {
+  background-color: var(--main-color-2);
 }
 
 #footer__message-box:focus {
