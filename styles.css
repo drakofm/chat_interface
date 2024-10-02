@@ -1,6 +1,3 @@
-/* TODO: check cross-browser compatibility */
-/* TODO: make adaptive compatibility fro mobile devices */
-
 /* *** Reset styles */
 *,
 *::before,
@@ -163,6 +160,8 @@ main {
   scrollbar-width: none;
 }
 
+
+
 .controls:hover,
 .user-plate:hover,
 #footer__message-icon-smile:hover,
@@ -201,3 +200,13 @@ main {
 
 /* Adaptive $$$ */
 
+/* *** Cross-browser (up to 2 years)  */
+
+#users-list::-webkit-scrollbar,
+#chat::-webkit-scrollbar,
+#footer__message-box::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+/* Cross-browser (up to 2 years) $$$ */
