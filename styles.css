@@ -34,7 +34,8 @@ main {
   display: flex;
   flex-direction: column;
   gap: 5px;
-  height: var(--vh); /* Адаптивность: исправление проблемы 100vh в моб.браузерах с помощью JS*/
+  min-height: calc(var(--vh, 1vh) * 100);
+  height: -webkit-fill-available;
   width: 100vw;
 }
 

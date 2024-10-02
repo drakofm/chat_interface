@@ -1,6 +1,8 @@
-function adjustVh() {
-  document.querySelector('main').style.setProperty('--vh', `${window.innerHeight}px`);
+const setViewportProperty = () => {
+  let vh = window.innerHeight * 0.01;
+  document.querySelector(main).style.setProperty('--vh', `${vh}px`);
 }
 
-adjustVh();
-window.addEventListener('orientationchange', adjustVh);
+window.addEventListener('resize', setViewportProperty);
+window.addEventListener('orientationchange', setViewportProperty);
+setViewportProperty();
