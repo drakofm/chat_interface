@@ -9,7 +9,7 @@
   padding: 0;
   box-sizing: border-box;
 }
-/* Reset styles $$$ */
+/* Reset styles $$$ */ 
 
 :root {
   --main-color-1: #3700ff3a;
@@ -34,8 +34,13 @@ main {
   display: flex;
   flex-direction: column;
   gap: 5px;
+  
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 100vh;
-  width: 100vw;
+  z-index: 999;
 }
 
 #header,
@@ -178,6 +183,8 @@ main {
   border-color: var(--border-color-active);
   outline: none;
 }
+
+
 
 /* *** Adaptive  */
 
