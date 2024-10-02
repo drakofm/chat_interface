@@ -22,7 +22,6 @@
 }
 
 html {
-  height: -webkit-fill-available;
   overflow: hidden;
 }
 
@@ -35,8 +34,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: 5px;
-  height: 100vh;
-  min-height: -webkit-fill-available;
+  height: var(--vh); /* Адаптивность: исправление проблемы 100vh в моб.браузерах с помощью JS*/
   width: 100vw;
 }
 
