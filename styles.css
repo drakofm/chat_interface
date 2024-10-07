@@ -32,7 +32,6 @@ main {
   flex-direction: column;
   gap: 5px;
   height: 100vh;
-  height: calc(var(--vh, 1vh) * 100);
   width: 100vw;
 }
 
@@ -181,7 +180,13 @@ main {
 
 
 
-/* *** Adaptive  */
+/* ^^^ Adaptive  */
+
+@media screen and (max-width: 1080px) {
+  #users-list-and-chat {
+    max-height: calc(100vh - 160px - 60px);
+  }
+}
 
 @media screen and (max-width: 666px) {
   #users-list {
@@ -201,7 +206,7 @@ main {
 
 /* Adaptive $$$ */
 
-/* *** Cross-browser (up to 2 years)  */
+/* ^^^ Cross-browser (up to 2 years)  */
 
 #users-list::-webkit-scrollbar,
 #chat::-webkit-scrollbar,
