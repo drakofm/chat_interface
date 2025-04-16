@@ -9,13 +9,13 @@
 /* Reset styles $$$ */ 
 
 :root {
-  --main-color-1: #3700ff3a;
-  --main-color-2: #a200ff3a;
-  --main-color-3: #f200ff3a;
-  --bg-color: #d4e4fe;
+  --main-color-1: #a289ff3a;
+  --main-color-2: #c562fe3a;
+  --main-color-3: #9ac1ff3a;
+  --bg-color: #ddeaff;
   --bg-color-light: #e6effc;
-  --border-color: #aca6f9;
-  --border-color-active: #837bf6;
+  --border-color: #cdcaff;
+  --border-color-active: #948bf5;
 }
 
 html {
